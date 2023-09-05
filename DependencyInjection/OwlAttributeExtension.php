@@ -30,6 +30,11 @@ final class OwlAttributeExtension extends AbstractResourceExtension
         $this->registerResources('owl', $config['driver'], $this->resolveResources($config['resources'], $container), $container);
     }
 
+    /**
+     * @return array[]
+     *
+     * @psalm-return array<string, array>
+     */
     private function resolveResources(array $resources, ContainerBuilder $container): array
     {
         $container->setParameter('sylius.attribute.subjects', $resources);

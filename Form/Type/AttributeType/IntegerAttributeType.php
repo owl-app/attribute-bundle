@@ -19,6 +19,11 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class IntegerAttributeType extends AbstractType
 {
+    /**
+     * @return string
+     *
+     * @psalm-return IntegerType::class
+     */
     public function getParent(): string
     {
         return IntegerType::class;
@@ -35,6 +40,11 @@ final class IntegerAttributeType extends AbstractType
         ;
     }
 
+    /**
+     * @return string
+     *
+     * @psalm-return 'sylius_attribute_type_integer'
+     */
     public function getBlockPrefix(): string
     {
         return 'sylius_attribute_type_integer';

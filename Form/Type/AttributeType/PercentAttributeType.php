@@ -19,6 +19,11 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class PercentAttributeType extends AbstractType
 {
+    /**
+     * @return string
+     *
+     * @psalm-return PercentType::class
+     */
     public function getParent(): string
     {
         return PercentType::class;
@@ -35,6 +40,11 @@ final class PercentAttributeType extends AbstractType
         ;
     }
 
+    /**
+     * @return string
+     *
+     * @psalm-return 'sylius_attribute_type_percent'
+     */
     public function getBlockPrefix(): string
     {
         return 'sylius_attribute_type_percent';

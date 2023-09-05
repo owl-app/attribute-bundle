@@ -52,11 +52,21 @@ final class SelectAttributeValueType extends AbstractType
         ]);
     }
 
+    /**
+     * @return string
+     *
+     * @psalm-return FixedCollectionType::class
+     */
     public function getParent(): string
     {
         return FixedCollectionType::class;
     }
 
+    /**
+     * @return string
+     *
+     * @psalm-return 'sylius_select_attribute_value_translations'
+     */
     public function getBlockPrefix(): string
     {
         return 'sylius_select_attribute_value_translations';

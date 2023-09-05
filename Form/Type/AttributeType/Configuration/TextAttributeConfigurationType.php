@@ -33,6 +33,11 @@ final class TextAttributeConfigurationType extends AbstractType
         ;
     }
 
+    /**
+     * @return string
+     *
+     * @psalm-return 'sylius_attribute_type_configuration_text'
+     */
     public function getBlockPrefix(): string
     {
         return 'sylius_attribute_type_configuration_text';

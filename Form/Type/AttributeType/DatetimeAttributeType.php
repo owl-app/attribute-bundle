@@ -19,6 +19,11 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class DatetimeAttributeType extends AbstractType
 {
+    /**
+     * @return string
+     *
+     * @psalm-return DateTimeType::class
+     */
     public function getParent(): string
     {
         return DateTimeType::class;
@@ -35,6 +40,11 @@ final class DatetimeAttributeType extends AbstractType
         ;
     }
 
+    /**
+     * @return string
+     *
+     * @psalm-return 'sylius_attribute_type_datetime'
+     */
     public function getBlockPrefix(): string
     {
         return 'sylius_attribute_type_datetime';

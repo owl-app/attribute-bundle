@@ -29,6 +29,11 @@ final class DateAttributeConfigurationType extends AbstractType
         ;
     }
 
+    /**
+     * @return string
+     *
+     * @psalm-return 'sylius_attribute_type_configuration_date'
+     */
     public function getBlockPrefix(): string
     {
         return 'sylius_attribute_type_configuration_date';

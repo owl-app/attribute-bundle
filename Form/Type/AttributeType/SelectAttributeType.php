@@ -31,6 +31,11 @@ final class SelectAttributeType extends AbstractType
         $this->defaultLocaleCode = $localeProvider->getDefaultLocaleCode();
     }
 
+    /**
+     * @return string
+     *
+     * @psalm-return ChoiceType::class
+     */
     public function getParent(): string
     {
         return ChoiceType::class;
@@ -54,7 +59,11 @@ final class SelectAttributeType extends AbstractType
 
                     return null;
                 },
-                /** @param mixed $string */
+                /**
+                 * @param mixed $string 
+                 *
+                 * @psalm-return list{0?: mixed}
+                 */
                 function ($string): array {
                     if (null !== $string) {
                         return [$string];
@@ -107,6 +116,11 @@ final class SelectAttributeType extends AbstractType
         ;
     }
 
+    /**
+     * @return string
+     *
+     * @psalm-return 'sylius_attribute_type_select'
+     */
     public function getBlockPrefix(): string
     {
         return 'sylius_attribute_type_select';

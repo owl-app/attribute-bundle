@@ -20,11 +20,21 @@ final class ValidTextAttributeConfiguration extends Constraint
     /** @var string */
     public $message = 'sylius.attribute.configuration.max_length';
 
+    /**
+     * @return string
+     *
+     * @psalm-return 'class'
+     */
     public function getTargets(): string
     {
         return self::CLASS_CONSTRAINT;
     }
 
+    /**
+     * @return string
+     *
+     * @psalm-return 'sylius_valid_text_attribute_validator'
+     */
     public function validatedBy(): string
     {
         return 'sylius_valid_text_attribute_validator';

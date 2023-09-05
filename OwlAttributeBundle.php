@@ -21,6 +21,11 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 final class OwlAttributeBundle extends AbstractResourceBundle
 {
+    /**
+     * @return string[]
+     *
+     * @psalm-return list{'doctrine/orm'}
+     */
     public function getSupportedDrivers(): array
     {
         return [
@@ -38,6 +43,10 @@ final class OwlAttributeBundle extends AbstractResourceBundle
 
     /**
      * @psalm-suppress MismatchingDocblockReturnType https://github.com/vimeo/psalm/issues/2345
+     *
+     * @return string
+     *
+     * @psalm-return 'Owl\Component\Attribute\Model'
      */
     protected function getModelNamespace(): string
     {

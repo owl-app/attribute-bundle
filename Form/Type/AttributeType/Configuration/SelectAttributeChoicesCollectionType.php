@@ -71,11 +71,21 @@ class SelectAttributeChoicesCollectionType extends AbstractType
         });
     }
 
+    /**
+     * @return string
+     *
+     * @psalm-return CollectionType::class
+     */
     public function getParent(): string
     {
         return CollectionType::class;
     }
 
+    /**
+     * @return string
+     *
+     * @psalm-return 'sylius_select_attribute_choices_collection'
+     */
     public function getBlockPrefix(): string
     {
         return 'sylius_select_attribute_choices_collection';

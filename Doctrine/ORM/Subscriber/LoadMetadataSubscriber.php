@@ -28,6 +28,11 @@ final class LoadMetadataSubscriber implements EventSubscriber
         $this->subjects = $subjects;
     }
 
+    /**
+     * @return string[]
+     *
+     * @psalm-return list{'loadClassMetadata'}
+     */
     public function getSubscribedEvents(): array
     {
         return [
