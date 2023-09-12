@@ -23,10 +23,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 abstract class AttributeChoiceType extends AbstractType
 {
-    /** @var RepositoryInterface */
-    protected $attributeRepository;
-
-    public function __construct(RepositoryInterface $attributeRepository)
+    public function __construct(private RepositoryInterface $attributeRepository)
     {
         $this->attributeRepository = $attributeRepository;
     }
@@ -52,21 +49,11 @@ abstract class AttributeChoiceType extends AbstractType
         ;
     }
 
-    /**
-     * @return string
-     *
-     * @psalm-return ChoiceType::class
-     */
     public function getParent(): string
     {
         return ChoiceType::class;
     }
 
-    /**
-     * @return string
-     *
-     * @psalm-return 'sylius_attribute_choice'
-     */
     public function getBlockPrefix(): string
     {
         return 'sylius_attribute_choice';
