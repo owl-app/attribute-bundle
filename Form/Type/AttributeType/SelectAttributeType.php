@@ -59,8 +59,6 @@ final class SelectAttributeType extends AbstractType
                 },
                 /**
                  * @param mixed $string
-                 *
-                 * @psalm-return list{0?: mixed}
                  */
                 function ($string): array {
                     if (null !== $string) {
@@ -91,7 +89,7 @@ final class SelectAttributeType extends AbstractType
                             continue;
                         }
 
-                        if (false === isset($choice['name']) || '' === $choice['name']) {
+                        if ('' === $choice['name'] || false === isset($choice['name'])) {
                             continue;
                         }
                     }
@@ -114,9 +112,6 @@ final class SelectAttributeType extends AbstractType
         ;
     }
 
-    /**
-     * @psalm-return 'sylius_attribute_type_select'
-     */
     public function getBlockPrefix(): string
     {
         return 'sylius_attribute_type_select';
