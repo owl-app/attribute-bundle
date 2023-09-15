@@ -13,12 +13,12 @@ declare(strict_types=1);
 
 namespace Owl\Bundle\AttributeBundle\Form\Type;
 
+use Owl\Component\Attribute\Model\AttributeInterface;
+use Owl\Component\Attribute\Model\AttributeValueInterface;
 use Sylius\Bundle\LocaleBundle\Form\Type\LocaleChoiceType;
 use Sylius\Bundle\ResourceBundle\Form\DataTransformer\ResourceToIdentifierTransformer;
 use Sylius\Bundle\ResourceBundle\Form\Registry\FormTypeRegistryInterface;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
-use Owl\Component\Attribute\Model\AttributeInterface;
-use Owl\Component\Attribute\Model\AttributeValueInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
@@ -47,7 +47,7 @@ abstract class AttributeValueType extends AbstractResourceType
         string $attributeChoiceType,
         RepositoryInterface $attributeRepository,
         RepositoryInterface $localeRepository,
-        FormTypeRegistryInterface $formTypeTypeRegistry
+        FormTypeRegistryInterface $formTypeTypeRegistry,
     ) {
         parent::__construct($dataClass, $validationGroups);
 
@@ -102,12 +102,12 @@ abstract class AttributeValueType extends AbstractResourceType
     protected function addValueField(
         FormInterface $form,
         AttributeInterface $attribute,
-        ?string $localeCode = null
+        ?string $localeCode = null,
     ): void {
         $form->add('value', $this->formTypeRegistry->get($attribute->getType(), 'default'), [
             'auto_initialize' => false,
             'configuration' => $attribute->getConfiguration(),
-            'label' => $attribute->getName()
+            'label' => $attribute->getName(),
         ]);
     }
 
@@ -116,7 +116,7 @@ abstract class AttributeValueType extends AbstractResourceType
         parent::configureOptions($resolver);
 
         $resolver->setDefaults([
-            'attribute_choice_type_options' => []
+            'attribute_choice_type_options' => [],
         ]);
     }
 }

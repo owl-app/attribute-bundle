@@ -13,14 +13,14 @@ declare(strict_types=1);
 
 namespace spec\Owl\Bundle\AttributeBundle\Validator\Constraints;
 
-use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Owl\Bundle\AttributeBundle\Validator\Constraints\ValidAttributeValue;
 use Owl\Bundle\AttributeBundle\Validator\Constraints\ValidAttributeValueValidator;
 use Owl\Component\Attribute\AttributeType\AttributeTypeInterface;
 use Owl\Component\Attribute\AttributeType\TextAttributeType;
 use Owl\Component\Attribute\Model\AttributeInterface;
 use Owl\Component\Attribute\Model\AttributeValueInterface;
+use PhpSpec\ObjectBehavior;
+use Prophecy\Argument;
 use Sylius\Component\Registry\ServiceRegistryInterface;
 use Sylius\Component\Resource\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\ConstraintValidator;
@@ -49,7 +49,7 @@ final class ValidAttributeValueValidatorSpec extends ObjectBehavior
         AttributeTypeInterface $attributeType,
         AttributeValueInterface $attributeValue,
         ServiceRegistryInterface $attributeTypesRegistry,
-        ValidAttributeValue $attributeValueConstraint
+        ValidAttributeValue $attributeValueConstraint,
     ): void {
         $attributeValue->getType()->willReturn(TextAttributeType::TYPE);
         $attributeTypesRegistry->get('text')->willReturn($attributeType);
@@ -63,7 +63,7 @@ final class ValidAttributeValueValidatorSpec extends ObjectBehavior
 
     public function it_throws_exception_if_validated_value_is_not_attribute_value(
         \DateTime $badObject,
-        ValidAttributeValue $attributeValueConstraint
+        ValidAttributeValue $attributeValueConstraint,
     ): void {
         $this
             ->shouldThrow(new UnexpectedTypeException('\DateTimeInterface', AttributeValueInterface::class))

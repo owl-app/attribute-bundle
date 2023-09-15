@@ -18,9 +18,9 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Event\LoadClassMetadataEventArgs;
 use Doctrine\ORM\Mapping\ClassMetadataFactory;
 use Doctrine\ORM\Mapping\ClassMetadataInfo;
+use Owl\Bundle\AttributeBundle\Doctrine\ORM\Subscriber\LoadMetadataSubscriber;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Owl\Bundle\AttributeBundle\Doctrine\ORM\Subscriber\LoadMetadataSubscriber;
 
 final class LoadMetadataSubscriberSpec extends ObjectBehavior
 {
@@ -62,7 +62,7 @@ final class LoadMetadataSubscriberSpec extends ObjectBehavior
         LoadClassMetadataEventArgs $eventArgs,
         ClassMetadataInfo $metadata,
         EntityManager $entityManager,
-        ClassMetadataFactory $classMetadataFactory
+        ClassMetadataFactory $classMetadataFactory,
     ): void {
         $eventArgs->getEntityManager()->willReturn($entityManager);
         $entityManager->getMetadataFactory()->willReturn($classMetadataFactory);
@@ -80,7 +80,7 @@ final class LoadMetadataSubscriberSpec extends ObjectBehavior
         ClassMetadataInfo $metadata,
         EntityManager $entityManager,
         ClassMetadataFactory $classMetadataFactory,
-        ClassMetadataInfo $classMetadataInfo
+        ClassMetadataInfo $classMetadataInfo,
     ): void {
         $eventArgs->getEntityManager()->willReturn($entityManager);
         $entityManager->getMetadataFactory()->willReturn($classMetadataFactory);
@@ -129,7 +129,7 @@ final class LoadMetadataSubscriberSpec extends ObjectBehavior
         LoadClassMetadataEventArgs $eventArgs,
         ClassMetadataInfo $metadata,
         EntityManager $entityManager,
-        ClassMetadataFactory $classMetadataFactory
+        ClassMetadataFactory $classMetadataFactory,
     ): void {
         $eventArgs->getEntityManager()->willReturn($entityManager);
         $entityManager->getMetadataFactory()->willReturn($classMetadataFactory);

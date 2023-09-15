@@ -21,8 +21,6 @@ final class ValidTextAttributeConfiguration extends Constraint
     public $message = 'sylius.attribute.configuration.max_length';
 
     /**
-     * @return string
-     *
      * @psalm-return 'class'
      */
     public function getTargets(): string
@@ -31,8 +29,6 @@ final class ValidTextAttributeConfiguration extends Constraint
     }
 
     /**
-     * @return string
-     *
      * @psalm-return 'sylius_valid_text_attribute_validator'
      */
     public function validatedBy(): string

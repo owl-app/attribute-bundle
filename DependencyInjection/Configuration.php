@@ -13,14 +13,13 @@ declare(strict_types=1);
 
 namespace Owl\Bundle\AttributeBundle\DependencyInjection;
 
-use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
-use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
 use Owl\Component\Attribute\Model\Attribute;
 use Owl\Component\Attribute\Model\AttributeInterface;
 use Owl\Component\Attribute\Model\AttributeTranslation;
 use Owl\Component\Attribute\Model\AttributeTranslationInterface;
+use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
+use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
 use Sylius\Component\Resource\Factory\Factory;
-use Sylius\Component\Resource\Factory\TranslatableFactory;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

@@ -16,7 +16,6 @@ namespace Owl\Bundle\AttributeBundle\Form\Type\AttributeType\Configuration;
 use Sylius\Bundle\ResourceBundle\Form\Type\FixedCollectionType;
 use Sylius\Component\Resource\Translation\Provider\TranslationLocaleProviderInterface;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class SelectAttributeValueType extends AbstractType
@@ -53,8 +52,6 @@ final class SelectAttributeValueType extends AbstractType
     }
 
     /**
-     * @return string
-     *
      * @psalm-return FixedCollectionType::class
      */
     public function getParent(): string
@@ -63,8 +60,6 @@ final class SelectAttributeValueType extends AbstractType
     }
 
     /**
-     * @return string
-     *
      * @psalm-return 'sylius_select_attribute_value_translations'
      */
     public function getBlockPrefix(): string

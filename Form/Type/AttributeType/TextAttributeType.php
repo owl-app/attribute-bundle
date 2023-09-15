@@ -20,8 +20,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 final class TextAttributeType extends AbstractType
 {
     /**
-     * @return string
-     *
      * @psalm-return TextType::class
      */
     public function getParent(): string
@@ -41,8 +39,6 @@ final class TextAttributeType extends AbstractType
     }
 
     /**
-     * @return string
-     *
      * @psalm-return 'sylius_attribute_type_text'
      */
     public function getBlockPrefix(): string

@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace spec\Owl\Bundle\AttributeBundle\Validator\Constraints;
 
-use PhpSpec\ObjectBehavior;
 use Owl\Bundle\AttributeBundle\Validator\Constraints\ValidAttributeValue;
+use PhpSpec\ObjectBehavior;
 use Symfony\Component\Validator\Constraint;
 
 final class ValidAttributeValueSpec extends ObjectBehavior

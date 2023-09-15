@@ -32,8 +32,6 @@ final class SelectAttributeType extends AbstractType
     }
 
     /**
-     * @return string
-     *
      * @psalm-return ChoiceType::class
      */
     public function getParent(): string
@@ -43,9 +41,9 @@ final class SelectAttributeType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        if (is_array($options['configuration'])
-            && isset($options['configuration']['multiple'])
-            && !$options['configuration']['multiple']) {
+        if (is_array($options['configuration']) &&
+            isset($options['configuration']['multiple']) &&
+            !$options['configuration']['multiple']) {
             $builder->addModelTransformer(new CallbackTransformer(
                 /**
                  * @param mixed $array
@@ -60,7 +58,7 @@ final class SelectAttributeType extends AbstractType
                     return null;
                 },
                 /**
-                 * @param mixed $string 
+                 * @param mixed $string
                  *
                  * @psalm-return list{0?: mixed}
                  */
@@ -70,7 +68,7 @@ final class SelectAttributeType extends AbstractType
                     }
 
                     return [];
-                }
+                },
             ));
         }
     }
@@ -81,9 +79,9 @@ final class SelectAttributeType extends AbstractType
             ->setRequired('configuration')
             ->setDefault('placeholder', 'owl.form.attribute_type_configuration.select.choose')
             ->setNormalizer('choices', function (Options $options) {
-                if (is_array($options['configuration'])
-                    && isset($options['configuration']['choices'])
-                    && is_array($options['configuration']['choices'])) {
+                if (is_array($options['configuration']) &&
+                    isset($options['configuration']['choices']) &&
+                    is_array($options['configuration']['choices'])) {
                     $choices = [];
 
                     foreach ($options['configuration']['choices'] as $key => $choice) {
@@ -117,8 +115,6 @@ final class SelectAttributeType extends AbstractType
     }
 
     /**
-     * @return string
-     *
      * @psalm-return 'sylius_attribute_type_select'
      */
     public function getBlockPrefix(): string

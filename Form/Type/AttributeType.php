@@ -13,12 +13,10 @@ declare(strict_types=1);
 
 namespace Owl\Bundle\AttributeBundle\Form\Type;
 
+use Owl\Component\Attribute\Model\AttributeInterface;
 use Sylius\Bundle\ResourceBundle\Form\EventSubscriber\AddCodeFormSubscriber;
 use Sylius\Bundle\ResourceBundle\Form\Registry\FormTypeRegistryInterface;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
-use Sylius\Bundle\ResourceBundle\Form\Type\ResourceTranslationsType;
-use Owl\Component\Attribute\Model\AttributeInterface;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
@@ -34,7 +32,7 @@ abstract class AttributeType extends AbstractResourceType
     public function __construct(
         string $dataClass,
         array $validationGroups,
-        FormTypeRegistryInterface $formTypeRegistry
+        FormTypeRegistryInterface $formTypeRegistry,
     ) {
         parent::__construct($dataClass, $validationGroups);
 

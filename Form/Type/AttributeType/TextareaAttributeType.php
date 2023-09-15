@@ -20,8 +20,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 final class TextareaAttributeType extends AbstractType
 {
     /**
-     * @return string
-     *
      * @psalm-return TextareaType::class
      */
     public function getParent(): string
@@ -41,8 +39,6 @@ final class TextareaAttributeType extends AbstractType
     }
 
     /**
-     * @return string
-     *
      * @psalm-return 'sylius_attribute_type_textarea'
      */
     public function getBlockPrefix(): string

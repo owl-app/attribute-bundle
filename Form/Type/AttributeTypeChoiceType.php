@@ -36,8 +36,6 @@ final class AttributeTypeChoiceType extends AbstractType
     }
 
     /**
-     * @return string
-     *
      * @psalm-return ChoiceType::class
      */
     public function getParent(): string
@@ -46,8 +44,6 @@ final class AttributeTypeChoiceType extends AbstractType
     }
 
     /**
-     * @return string
-     *
      * @psalm-return 'sylius_attribute_type_choice'
      */
     public function getBlockPrefix(): string

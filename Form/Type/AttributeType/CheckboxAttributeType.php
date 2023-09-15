@@ -20,8 +20,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 final class CheckboxAttributeType extends AbstractType
 {
     /**
-     * @return string
-     *
      * @psalm-return CheckboxType::class
      */
     public function getParent(): string
@@ -41,8 +39,6 @@ final class CheckboxAttributeType extends AbstractType
     }
 
     /**
-     * @return string
-     *
      * @psalm-return 'sylius_attribute_type_checkbox'
      */
     public function getBlockPrefix(): string

@@ -18,8 +18,6 @@ use Symfony\Component\Validator\Constraint;
 class ValidAttributeValue extends Constraint
 {
     /**
-     * @return string
-     *
      * @psalm-return 'class'
      */
     public function getTargets(): string
@@ -28,8 +26,6 @@ class ValidAttributeValue extends Constraint
     }
 
     /**
-     * @return string
-     *
      * @psalm-return 'sylius_valid_attribute_value_validator'
      */
     public function validatedBy(): string

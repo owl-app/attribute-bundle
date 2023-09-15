@@ -27,8 +27,6 @@ final class ValidSelectAttributeConfiguration extends Constraint
     public $messageMaxEntries = 'sylius.attribute.configuration.max_entries';
 
     /**
-     * @return string
-     *
      * @psalm-return 'class'
      */
     public function getTargets(): string
@@ -37,8 +35,6 @@ final class ValidSelectAttributeConfiguration extends Constraint
     }
 
     /**
-     * @return string
-     *
      * @psalm-return 'sylius_valid_select_attribute_validator'
      */
     public function validatedBy(): string
